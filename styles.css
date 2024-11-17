@@ -1,0 +1,121 @@
+:root {
+    --bg-color: #e0e5ec; /* Fondo claro */
+    --box-color: rgba(255, 255, 255, 0.4); /* Fondo translúcido con menos opacidad */
+    --shadow-color-dark: rgba(0, 0, 0, 0.15); /* Sombra más definida */
+    --shadow-color-light: rgba(255, 255, 255, 0.8); /* Luz superior */
+}
+
+html, body, h1, h2, p, a, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0px; /* Desplaza la imagen 300px hacia abajo */
+    left: 0;
+    right: 0;
+    height: 100%; /* Asegura que cubra toda la altura */
+    background-image: url('./imagenes/header.png'), linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background-size: contain; /* Hace que la imagen se ajuste completamente sin recortarse */
+    background-position: top; /* Centra la imagen para que se vea bien en cualquier resolución */
+    background-repeat: no-repeat; /* Evita que la imagen se repita si no cubre todo el área */
+    opacity: 0.9; /* Opacidad del 90% */
+    z-index: -1;
+}
+
+.container {
+    max-width: 90%; /* Cambiado a un porcentaje para que se ajuste a diferentes pantallas */
+    width: 800px; /* Ancho máximo */
+    background: var(--box-color);
+    backdrop-filter: blur(10px); /* Efecto vidrio */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /* Elimina el resplandor */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea el contenido al centro */
+    position: relative;
+    margin-top: 30px;
+}
+
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; /* Centra el contenido */
+    width: 100%;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d9534f;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: left;
+}
+
+a {
+    color: #d9534f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--box-color);
+    backdrop-filter: blur(5px);
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 
+        6px 6px 12px var(--shadow-color-dark), 
+        -6px -6px 12px var(--shadow-color-light); /* Más definido */
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: #d9534f;
+    box-shadow: 
+        4px 4px 8px var(--shadow-color-dark), 
+        -4px -4px 8px var(--shadow-color-light);
+
+}
+
+.footer-img {
+    display: block;
+    margin: 10px auto; /* Centra la imagen y le da un margen */
+    max-width: 400px;  /* Limita el tamaño máximo de la imagen */
+}
